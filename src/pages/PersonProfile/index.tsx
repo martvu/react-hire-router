@@ -1,15 +1,22 @@
 import { useState, useEffect } from "react";
 import HireForm from "./components/HireForm";
 import { useParams } from "react-router-dom";
+import type { Person } from "../../types"
 
-function PersonProfile(props) {
+interface props {
+  people:Person[];
+  setHiredPeople: (people:Person[]) => void;
+  hiredPeople: Person[];
+}
+
+function PersonProfile(props : props) {
   const { people, setHiredPeople, hiredPeople } = props;
-  const [person, setPerson] = useState(null);
+  const [person, setPerson] = useState<Person>();
   const { id } = useParams();
 
   useEffect(() => {
     const person = people.find(person => person.id.value === id);
-    setPerson(person);
+    if (person) setPerson(person);
  
   }, [people, id]);
 

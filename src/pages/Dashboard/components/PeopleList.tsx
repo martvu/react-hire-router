@@ -1,6 +1,10 @@
+import { Person } from '../../../types'
 import PeopleListItem from './PeopleListItem'
 
-function PeopleList(props) {
+interface props {
+  people: Person[]
+}
+function PeopleList(props : props) {
   const { people } = props
   return (
     <ul>

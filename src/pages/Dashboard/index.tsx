@@ -1,7 +1,11 @@
-import { useState } from 'react'
+import { Person } from '../../types';
 import PeopleList from './components/PeopleList'
 
-function Dashboard(props) {
+interface props {
+  people: Person[];
+  hiredPeople: Person[];
+}
+function Dashboard(props : props) {
   const { people, hiredPeople } = props
   // const [people, setPeople] = useState([])
 

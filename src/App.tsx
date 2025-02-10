@@ -3,9 +3,10 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard/index";
 import PersonProfile from "./pages/PersonProfile";
+import type { Person } from "./types"
 
 export default function App() {
-  const [hiredPeople, setHiredPeople] = useState([]);
+  const [hiredPeople, setHiredPeople] = useState<Person[]>([]);
   const [people, setPeople] = useState(null);
   const url = "https://randomuser.me/api/?results=50";
 

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { Person } from "../../../types";
 
-function PeopleListItem(props) {
+interface props {
+  person: Person;
+}
+function PeopleListItem(props:props) {
   const { person } = props;
 
   return (
