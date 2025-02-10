@@ -1,19 +1,28 @@
-import { useState } from 'react'
-import HireForm from './components/HireForm'
+import { useState, useEffect } from "react";
+import HireForm from "./components/HireForm";
+import { useParams } from "react-router-dom";
 
 function PersonProfile(props) {
-  const [person, setPerson] = useState(null)
+  const { people, setHiredPeople, hiredPeople } = props;
+  const [person, setPerson] = useState(null);
+  const { id } = useParams();
 
-  if (!person) return <p>Loading...</p>
+  useEffect(() => {
+    const person = people.find(person => person.id.value === id);
+    setPerson(person);
+    console.log(person);
+  }, [people, id]);
+
+  if (!person) return <p>Loading...</p>;
 
   return (
     <article>
       <h2>
         {person.name.first} {person.name.last}
       </h2>
-      <HireForm person={person} />
+      <HireForm person={person} setHiredPeople={setHiredPeople} hiredPeople={hiredPeople}/>
     </article>
-  )
+  );
 }
 
-export default PersonProfile
+export default PersonProfile;
