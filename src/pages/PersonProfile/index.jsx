@@ -10,7 +10,7 @@ function PersonProfile(props) {
   useEffect(() => {
     const person = people.find(person => person.id.value === id);
     setPerson(person);
-    console.log(person);
+ 
   }, [people, id]);
 
   if (!person) return <p>Loading...</p>;

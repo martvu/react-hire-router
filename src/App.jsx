@@ -20,7 +20,7 @@ export default function App() {
   }, []);
 
   if (!people) return <p>Loading...</p>;
-  console.log(people);
+
   return (
     <>
       <header>

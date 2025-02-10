@@ -3,7 +3,6 @@ import PeopleList from './components/PeopleList'
 
 function Dashboard(props) {
   const { people, hiredPeople } = props
-  console.log(people);
   // const [people, setPeople] = useState([])
 
   return (

@@ -6,7 +6,7 @@ function HireForm(props) {
   const [wage, setWage] = useState( person.wage || 0 ) 
   const navigate = useNavigate();
 
-  function handleSubmit(event) {
+  function handleSubmit() {
     
     person.wage = wage
     if (!hiredPeople.includes(person)) {
